@@ -11,6 +11,7 @@
 		C4697CA32AED623100B36287 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4697CA22AED623100B36287 /* ContentView.swift */; };
 		C4697CA52AED623700B36287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4697CA42AED623700B36287 /* Assets.xcassets */; };
 		C4697CA92AED623700B36287 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4697CA82AED623700B36287 /* Preview Assets.xcassets */; };
+		C9ADF4092AED8F80008A8095 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADF4082AED8F7F008A8095 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,8 @@
 		C4697CA42AED623700B36287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4697CA62AED623700B36287 /* DyslexiQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DyslexiQuiz.entitlements; sourceTree = "<group>"; };
 		C4697CA82AED623700B36287 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C963C1152AED822A00784B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C9ADF4082AED8F7F008A8095 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +41,7 @@
 			children = (
 				C4697C9F2AED623100B36287 /* DyslexiQuiz */,
 				C4697C9E2AED623100B36287 /* Products */,
+				C963C1162AED8B2C00784B56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,11 +56,13 @@
 		C4697C9F2AED623100B36287 /* DyslexiQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				C963C1152AED822A00784B56 /* Info.plist */,
 				C4697CA02AED623100B36287 /* DyslexiQuizApp.swift */,
-				C4697CA22AED623100B36287 /* ContentView.swift */,
 				C4697CA42AED623700B36287 /* Assets.xcassets */,
 				C4697CA62AED623700B36287 /* DyslexiQuiz.entitlements */,
 				C4697CA72AED623700B36287 /* Preview Content */,
+				C9ADF4082AED8F7F008A8095 /* ProfileView.swift */,
+				C4697CA22AED623100B36287 /* ContentView.swift */,
 			);
 			path = DyslexiQuiz;
 			sourceTree = "<group>";
@@ -67,6 +73,13 @@
 				C4697CA82AED623700B36287 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C963C1162AED8B2C00784B56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4697CA32AED623100B36287 /* ContentView.swift in Sources */,
+				C9ADF4092AED8F80008A8095 /* ProfileView.swift in Sources */,
 				C4697CA12AED623100B36287 /* DyslexiQuizApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,10 +284,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DyslexiQuiz/Preview Content\"";
-				DEVELOPMENT_TEAM = D45M7AYBQL;
+				DEVELOPMENT_TEAM = 3DK6BWW8QX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DyslexiQuiz/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -283,7 +298,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "\"\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -308,10 +323,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DyslexiQuiz/Preview Content\"";
-				DEVELOPMENT_TEAM = D45M7AYBQL;
+				DEVELOPMENT_TEAM = 3DK6BWW8QX;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DyslexiQuiz/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -321,7 +337,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "\"\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
