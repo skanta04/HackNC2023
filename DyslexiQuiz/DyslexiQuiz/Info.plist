@@ -2,9 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>com.apple.security.app-sandbox</key>
-    <true/>
-    <key>com.apple.security.files.user-selected.read-only</key>
-    <true/>
+	<key>Privacy - Access user input using speech recognition</key>
+	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OpenDyslexic3-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

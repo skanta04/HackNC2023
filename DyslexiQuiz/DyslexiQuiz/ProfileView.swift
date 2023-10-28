@@ -14,7 +14,6 @@ struct ProfileView: View {
         ZStack{
             VStack {
                 Image(systemName: "person.circle.fill")
-                    .imageScale(.large)
             }
         }
     }

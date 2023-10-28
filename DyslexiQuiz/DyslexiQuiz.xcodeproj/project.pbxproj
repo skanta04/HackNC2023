@@ -12,6 +12,9 @@
 		C4697CA52AED623700B36287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4697CA42AED623700B36287 /* Assets.xcassets */; };
 		C4697CA92AED623700B36287 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4697CA82AED623700B36287 /* Preview Assets.xcassets */; };
 		C9ADF4092AED8F80008A8095 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADF4082AED8F7F008A8095 /* ProfileView.swift */; };
+		C9ADF40B2AED9659008A8095 /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADF40A2AED9659008A8095 /* ReadingView.swift */; };
+		C9ADF40D2AED96FA008A8095 /* OpenDyslexic3-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C9ADF40C2AED96FA008A8095 /* OpenDyslexic3-Regular.ttf */; };
+		C9ADF4112AEDA383008A8095 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ADF4102AEDA383008A8095 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		C4697CA82AED623700B36287 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C963C1152AED822A00784B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C9ADF4082AED8F7F008A8095 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C9ADF40A2AED9659008A8095 /* ReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingView.swift; sourceTree = "<group>"; };
+		C9ADF40C2AED96FA008A8095 /* OpenDyslexic3-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenDyslexic3-Regular.ttf"; sourceTree = "<group>"; };
+		C9ADF4102AEDA383008A8095 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,8 @@
 				C4697CA72AED623700B36287 /* Preview Content */,
 				C9ADF4082AED8F7F008A8095 /* ProfileView.swift */,
 				C4697CA22AED623100B36287 /* ContentView.swift */,
+				C9ADF40A2AED9659008A8095 /* ReadingView.swift */,
+				C9ADF4102AEDA383008A8095 /* HomeView.swift */,
 			);
 			path = DyslexiQuiz;
 			sourceTree = "<group>";
@@ -71,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				C4697CA82AED623700B36287 /* Preview Assets.xcassets */,
+				C9ADF40C2AED96FA008A8095 /* OpenDyslexic3-Regular.ttf */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -140,6 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9ADF40D2AED96FA008A8095 /* OpenDyslexic3-Regular.ttf in Resources */,
 				C4697CA92AED623700B36287 /* Preview Assets.xcassets in Resources */,
 				C4697CA52AED623700B36287 /* Assets.xcassets in Resources */,
 			);
@@ -153,6 +163,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4697CA32AED623100B36287 /* ContentView.swift in Sources */,
+				C9ADF40B2AED9659008A8095 /* ReadingView.swift in Sources */,
+				C9ADF4112AEDA383008A8095 /* HomeView.swift in Sources */,
 				C9ADF4092AED8F80008A8095 /* ProfileView.swift in Sources */,
 				C4697CA12AED623100B36287 /* DyslexiQuizApp.swift in Sources */,
 			);
