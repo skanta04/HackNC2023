@@ -16,7 +16,7 @@ struct ContentView: View {
                 Image(systemName: "house.fill")
                 Text("Home")
             }
-            Text("Flashcards")
+            FlashcardsView()
                 .tabItem {
                     Label("Flashcards", systemImage: "menucard.fill")
                 }
@@ -26,7 +26,7 @@ struct ContentView: View {
                     Label("EasyReader", systemImage: "book.fill")
                 }
                 .tag("3")
-            Text("Profile")
+            ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.fill")
                 }
