@@ -10,7 +10,7 @@ import SwiftUI
 import AVKit
 
 struct FlashcardsView: View {
-    private var animalNames = ["Dog", "Cat", "Lion", "Zebra", "Shark"]
+    private var animalNames = ["Dog", "Cat", "Lion", "Zebra", "Shark", "Whale"]
     @State private var isFront = true
     @State private var userInput = ""
     @State private var index = 0
@@ -23,7 +23,7 @@ struct FlashcardsView: View {
                 VStack {
                     Text("Learn Animals!!")
                         .font(.custom("OpenDyslexicThree-Regular", size: 40))
-                        .padding()
+                        .padding(.bottom, 100)
                     Text("\(index + 1)/\(animalNames.count)")
                         .padding(.bottom, 30)
                         .font(.custom("OpenDyslexicThree-Regular", size: 30))
