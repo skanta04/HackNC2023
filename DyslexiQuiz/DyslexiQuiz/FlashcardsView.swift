@@ -15,85 +15,83 @@ struct FlashcardsView: View {
     @State private var userInput = ""
     @State private var index = 0
     @State private var cardColor: Color = Color.lightPurple
+    let textToSpeechManager = TextToSpeechManager()
 
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color.cream
-                VStack {
-                    Text("Learn Animals!!")
-                        .font(.custom("OpenDyslexicThree-Regular", size: 40))
-                        .padding()
-                    Text("\(index + 1)/\(animalNames.count)")
-                        .padding(.bottom, 30)
-                        .font(.custom("OpenDyslexicThree-Regular", size: 30))
-                        .fontWeight(.bold)
-                    Rectangle()
-                        .fill(cardColor)
-                        .frame(width: 280, height: 200)
-                        .cornerRadius(20)
-                        .overlay(
-                            Image(systemName: "speaker.wave.2.fill")
-                                .resizable()
-                                .foregroundColor(Color.black)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 100)
-                                .padding(EdgeInsets(top: 640, leading: 170, bottom: 760, trailing: 0))
-                        )
-                        .onTapGesture {
-                            flipCard()
-                        }
-                        .overlay(
-                            Group {
-                                if (isFront) {
-                                    ForEach(animalNames, id: \.self) { animal in
-                                        Text(animalNames[index])
-                                            .foregroundColor(.black)
-                                            .font(.custom("OpenDyslexicThree-Regular", size: 40))
-                                    }
-                                }
-                                else {
-                                    VStack {
-                                        TextField("Type the word", text: $userInput)
-                                            .multilineTextAlignment(.center)
-                                            .font(.custom("OpenDyslexicThree-Regular", size: 25))
-                                            .padding(.bottom, 10)
-                                        Button {
-                                            correctWord()
-                                        } label: {
-                                            Text("Enter")
-                                                .foregroundColor(.white)
-                                                .frame(minWidth: 0, maxWidth: 50)
-                                                .frame(height: 25)
-                                                .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                                                .font(.custom("OpenDyslexicThree-Regular", size: 15))
-                                            
-                                        }.background(Color.black)
-                                            .cornerRadius(15)
-                                    }
-                                }
-                            }
-                        )
-                    Spacer().frame(height: 50)
-                    
-                    HStack {
-                        Image(systemName: "arrow.left.square.fill")
-                            .resizable()
-                            .foregroundColor(Color("LightPurple"))
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
-                            .onTapGesture {
-                                lastCard()
-                            }
-                        Image(systemName: "arrow.right.square.fill")
-                            .resizable()
-                            .foregroundColor(Color("LightPurple"))
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
-                            .onTapGesture {
-                                nextCard()
-                            }
+        ZStack {
+            Color.cream
+                .ignoresSafeArea()
+            VStack (spacing: 41) {
+                Text("Learn Animals!!")
+                    .font(.custom("OpenDyslexicThree-Regular", size: 40))
+                    .padding()
+                Text("\(index + 1)/\(animalNames.count)")
+                    .padding(.bottom, 30)
+                    .font(.custom("OpenDyslexicThree-Regular", size: 30))
+                    .fontWeight(.bold)
+                Rectangle()
+                    .fill(cardColor)
+                    .frame(width: 280, height: 200)
+                    .cornerRadius(20)
+                    .onTapGesture {
+                        flipCard()
                     }
+                    .overlay(
+                        Group {
+                            if (isFront) {
+                                ForEach(animalNames, id: \.self) { animal in
+                                    Text(animalNames[index])
+                                        .foregroundColor(.black)
+                                        .font(.custom("OpenDyslexicThree-Regular", size: 40))
+                                }
+                            }
+                            else {
+                                VStack {
+                                    TextField("Type the word", text: $userInput)
+                                        .multilineTextAlignment(.center)
+                                        .font(.custom("OpenDyslexicThree-Regular", size: 20))
+                                        .padding(.vertical, 0)
+                                        .padding(.horizontal, 30)
+                                        .background(Color.lightPurple)
+                                        .cornerRadius(20)
+                                    Button {
+                                        correctWord()
+                                        textToSpeechManager.speak(input: userInput)
+                                    } label: {
+                                        Text("Enter")
+                                            .foregroundColor(.black)
+                                            .frame(minWidth: 0, maxWidth: 50)
+                                            .frame(height: 25)
+                                            .font(.custom("OpenDyslexicThree-Regular", size: 15))
+                                            .padding(.all, 15)
+
+                                        
+                                    }
+                                        .background(Color.black)
+                                        .cornerRadius(15)
+                                }
+                            }
+                        }
+                    )
+                Spacer().frame(height: 50)
+                
+                HStack {
+                    Image(systemName: "arrow.left.square.fill")
+                        .resizable()
+                        .foregroundColor(Color("LightPurple"))
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .onTapGesture {
+                            lastCard()
+                        }
+                    Image(systemName: "arrow.right.square.fill")
+                        .resizable()
+                        .foregroundColor(Color("LightPurple"))
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .onTapGesture {
+                            nextCard()
+                        }
                 }
             }
         }
@@ -118,11 +116,11 @@ struct FlashcardsView: View {
         }
     }
     func correctWord() {
-        if userInput == animalNames[index] {
-            cardColor = Color(Color.green)
+        if userInput.caseInsensitiveCompare(animalNames[index]) == .orderedSame {
+            cardColor = Color.green
         }
         else {
-            cardColor = Color(Color.red)
+            cardColor = Color.red
         }
     }
 }

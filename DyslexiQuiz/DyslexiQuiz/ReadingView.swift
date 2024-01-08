@@ -5,7 +5,6 @@
 //  Created by Jordan Weinstein on 10/28/23.
 //
 
-import Foundation
 import SwiftUI
 
 struct ReadingView: View {
@@ -14,18 +13,18 @@ struct ReadingView: View {
     @State private var isFontApplied = false
 
     var body: some View {
-        NavigationStack {
-            
         ZStack {
             Color.cream
                 .ignoresSafeArea()
-            VStack (spacing: 41){
+            VStack(spacing: 41) {
                 Text("EasyReader")
                     .font(.custom("OpenDyslexicThree-Regular", size: 47))
+                    .padding(.top, 20)
+                
                 TextField("Enter Text", text: $originalText)
                     .padding()
                     .frame(width: 350, height: 100)
-                    .border(Color.black , width: 1)
+                    .border(Color.black, width: 1)
                     .font(.system(size: 16))
                 
                 Button(action: {
@@ -33,34 +32,30 @@ struct ReadingView: View {
                     isFontApplied = true
                 }) {
                     Text("Apply OpenDyslexic Font")
-                        .foregroundColor(.black)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.pastelBlue)
-                        .cornerRadius(12) 
-                        .shadow(color: Color.gray, radius: 5, x: 0, y: 4)
-                        .font(.custom("OpenDyslexicThree-Regular", size: 19))
+                        .foregroundColor(.white)
+                        .padding(.vertical, 20)
+                        .padding(.horizontal, 24)
+                        .background(.lightPurple)
+                        .cornerRadius(15)
+                        .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 2)
+                        .font(Font.custom("OpenDyslexicThree-Regular", size: 16))
                 }
                 .padding()
-                if isFontApplied {
-                    Text(displayText)
-                        .font(.custom("OpenDyslexicThree-Regular", size: 30))
-                }
+                
+                Text(displayText)
+                    .font(isFontApplied ? .custom("OpenDyslexicThree-Regular", size: 30) : .system(size: 30))
+                
                 Spacer()
             }
             .padding()
+            .background(Color.cream.ignoresSafeArea())
         }
     }
-    }
 }
+        
 
-
-struct OpenDyslexicFont: ViewModifier {
-    func body(content: Content) -> some View {
-        content.font(.custom("OpenDyslexicThree-Regular", size: 16))
+struct ReadingView_Previews: PreviewProvider {
+    static var previews: some View {
+        ReadingView()
     }
-}
-
-#Preview {
-    ReadingView()
 }

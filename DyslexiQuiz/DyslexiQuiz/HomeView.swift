@@ -5,29 +5,35 @@
 //  Created by Jordan Weinstein on 10/28/23.
 //
 
-import Foundation
 import SwiftUI
+import AVFoundation
 
 struct HomeView: View {
     @State private var nameInput: String = ""
     @State private var tabSelection = 1
     @State private var welcome : String = "Welcome"
+    let textToSpeechManager = TextToSpeechManager()
+    
     var body: some View {
-        
-        ZStack{
+        ZStack {
             Color.cream
-            VStack (spacing: 30) {
+                .ignoresSafeArea()
+            VStack (spacing: 41) {
                 Image("Logo")
                     .resizable()
-                    .frame(width:300, height: 200)
+                    .frame(width: 300, height: 200)
                     .aspectRatio(contentMode: .fit)
+                
                 Text("DyslexiQuiz")
                     .padding()
                     .font(.custom("OpenDyslexicThree-Regular", size: 40))
-                Image(systemName: "speaker.wave.2.fill")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(.black)
+                
+                Button {
+                    textToSpeechManager.speak(input: "Hi \(nameInput)!! Welcome to diss-lexie-quiz. Click on the flashcards icon to practice spelling and comprehension, or check out the easy reader to view any text in the open dyslexic font. Track your progress along the way!!")
+                } label: {
+                    Image(systemName: "speaker.wave.2.fill")
+                }
+                
                 Text("Enter Your Name:")
                     .font(.custom("OpenDyslexicThree-Regular", size: 25))
                 
@@ -36,14 +42,17 @@ struct HomeView: View {
                     .foregroundColor(.black)
                     .frame(width: 300, height: 50)
                     .background(Color.lightPurple)
-                    .cornerRadius(12) // Rounded corners
+                    .cornerRadius(12)
                     .shadow(color: Color.gray, radius: 5, x: 0, y: 4)
+                
                 Spacer()
             }
         }
     }
 }
 
-#Preview {
-    HomeView()
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
 }

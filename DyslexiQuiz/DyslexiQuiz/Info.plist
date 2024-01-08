@@ -8,5 +8,9 @@
 	<array>
 		<string>OpenDyslexic3-Regular.ttf</string>
 	</array>
+	<key>ATSApplicationFontsPath</key>
+	<string>OpenDyslexic3-Regular.ttf</string>
+	<key></key>
+	<string></string>
 </dict>
 </plist>

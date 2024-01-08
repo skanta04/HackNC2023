@@ -5,7 +5,6 @@
 //  Created by Jordan Weinstein on 10/28/23.
 //
 
-import Foundation
 import SwiftUI
 
 struct ProfileView: View {
@@ -23,7 +22,7 @@ var body: some View {
                     .frame(width: 100, height: 100)
                     .padding(.leading, 40)
                 Spacer()
-                Text("Hello Jane!")
+                Text("Profile")
                     .font(.custom("OpenDyslexicThree-Regular", size: 30))
                 Spacer()
             }
